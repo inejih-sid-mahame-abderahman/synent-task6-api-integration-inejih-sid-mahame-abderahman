@@ -1,12 +1,11 @@
 // src/components/Sidebar.jsx
-import { useState } from 'react';
 import { 
   Dashboard as DashboardIcon, 
   Code, 
   Timeline, 
   Settings,
   Description,
-  HelpOutline 
+  HelpOutline as HelpOutlineIcon
 } from '@mui/icons-material';
 
 const Sidebar = ({ activeTab, setActiveTab, onRefresh }) => {
@@ -61,7 +60,7 @@ const Sidebar = ({ activeTab, setActiveTab, onRefresh }) => {
             <Description className="text-sm" /> Docs
           </a>
           <a href="#" className="flex items-center gap-3 text-on-surface-variant hover:text-secondary transition-colors text-sm font-label-mono">
-            <HelpOutline className="text-sm" /> Support
+            <HelpOutlineIcon className="text-sm" /> Support
           </a>
         </div>
       </div>
