@@ -1,4 +1,4 @@
-// src/pages/Dashboard.jsx
+// src/pages/Dashboard.jsx - COMPLETE VERSION
 import { useState, useEffect, useCallback } from 'react';
 import Sidebar from '../components/Sidebar';
 import TopBar from '../components/TopBar';
@@ -57,6 +57,18 @@ const Dashboard = () => {
   const handleRefresh = () => {
     loadData();
   };
+
+  // If still loading stats, show a minimal loading state
+  if (loading.stats && !userStats.name) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center">
+        <div className="text-center">
+          <div className="w-16 h-16 border-4 border-secondary-fixed border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <p className="text-secondary">Loading GitHub data...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background">
